@@ -1,7 +1,15 @@
-const add = (...args) => args.reduce((acc, val) => acc + val, 0);
+function add(a, b) {
+    return a + b
+}
 
-const subtract = (...args) => args.reduce((acc, val) => acc - val);
+function subtract(a, b) {
+    return a - b
+}
 
-const sum = (total) => total.reduce((acc, val) => acc + val, 0);
+function multiply(a, b) {
+    return a * b
+}
 
-const multiply = (multiplication) => multiplication.reduce((acc, val) => acc * val);
+function divide(a, b) {
+    return a / b
+}
