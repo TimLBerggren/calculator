@@ -8,8 +8,7 @@ body {
 .screen {
     display: grid;
     justify-items: end;
-    /* width: 360px; */
-    height: 90px;
+    height: 100px;
     padding: 15px;
     background-color: #cbcbcb;
     margin-bottom: 10px;
@@ -17,6 +16,8 @@ body {
     color: #e8f1f2;
     overflow: hidden;
     border-radius: 15px;
+    border-style: groove;
+    border-color: black;
   }
 
 button {
@@ -27,6 +28,8 @@ button {
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    border-style: groove;
+    border-color: lightgray;
 }
 
 .button:hover {
@@ -55,4 +58,9 @@ button {
     height: 450px;
     grid-template-columns: repeat(1,1fr);
     flex-direction: column;
+}
+
+.clear,
+.backspace {
+  background-color: #F45B69;
 }
