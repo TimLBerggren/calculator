@@ -3,11 +3,14 @@ let operation = ''
 let secondNumber = ''
 
 const operators = {
+    '^': 'power',
     '+': 'plus',
     '-': 'minus',
     '*': 'multiply',
     '/': 'divide'
   };
+
+const power = (a, b) => a ** b;
 
 const add = (a, b) => a + b;
 
@@ -18,7 +21,9 @@ const multiply = (a, b) => a * b;
 const divide = (a, b) => (b === 0) ? 'Cannot divide by 0' : a / b;
 
 const operate = (firstNumber, operation, secondNumber) => {
-  if (operation === 'plus') {
+  if (operation === 'power') {
+    return power(firstNumber, secondNumber);
+  } else if (operation === 'plus') {
     return add(firstNumber, secondNumber);
   } else if (operation === 'minus') {
     return subtract(firstNumber, secondNumber);
