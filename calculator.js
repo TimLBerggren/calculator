@@ -6,7 +6,7 @@ const operators = {
     '+': 'plus',
     '-': 'minus',
     '*': 'multiply',
-    '/': 'divide',
+    '/': 'divide'
   };
 
 const add = (a, b) => a + b;
@@ -31,7 +31,7 @@ const operate = (firstNumber, operation, secondNumber) => {
   return 'Invalid operation';
 }
 
-// TODO MAYBE
+// TODO
 // if there needs to be an event listener then we do the following instead:
 // when a user inputs the second number, the operation should be executed and return the result
 // let operate = document.querySelector('')

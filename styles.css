@@ -1,5 +1,6 @@
 body {
     display: grid;
+    font-family: 'Public Pixel', sans-serif;
     justify-content: center;
     gap: 1px;
     background-color: bisque;
@@ -7,7 +8,10 @@ body {
 
 .screen {
     display: grid;
+    font-size: 30px;
     justify-items: end;
+    justify-content: end;
+    align-items: center;
     height: 100px;
     padding: 15px;
     background-color: #cbcbcb;
@@ -23,7 +27,8 @@ body {
 button {
     display: grid;
     color: white;
-    font-size: x-large;
+    font-family: 'Public Pixel', sans-serif;
+    font-size: 15px;
     background-color: darkslategray;
     justify-content: center;
     align-items: center;
