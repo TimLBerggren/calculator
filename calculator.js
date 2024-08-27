@@ -1,6 +1,12 @@
-let firstNumber = ''
-let operation = ''
-let secondNumber = ''
+let firstNumber = '';
+let operation = '';
+let secondNumber = '';
+let displayValue = '';
+
+const display = document.querySelector(".display");
+const numberButtons = document.querySelectorAll(".number");
+const clearButton = document.querySelector(".clear");
+
 
 const operators = {
     '^': 'power',
@@ -11,13 +17,9 @@ const operators = {
   };
 
 const power = (a, b) => a ** b;
-
 const add = (a, b) => a + b;
-
 const subtract = (a, b) => a - b;
-
 const multiply = (a, b) => a * b;
-
 const divide = (a, b) => (b === 0) ? 'Cannot divide by 0' : a / b;
 
 const operate = (firstNumber, operation, secondNumber) => {
@@ -36,7 +38,32 @@ const operate = (firstNumber, operation, secondNumber) => {
   return 'Invalid operation';
 }
 
-// TODO
-// if there needs to be an event listener then we do the following instead:
+function updateDisplay(value) {
+  if (displayValue === '' && value === '.') {
+      displayValue = '0.';
+  } else {
+      displayValue += value;
+  }
+  display.textContent = displayValue;
+}
+
+numberButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        const value = e.target.textContent.trim();
+        if (displayValue === '0') {
+            displayValue = '';
+        }
+        updateDisplay(value);
+    });
+});
+
+clearButton.addEventListener("click", () => {
+    firstNumber = '';
+    operation = '';
+    secondNumber = '';
+    displayValue = '';
+    display.textContent = "0";
+})
+
+//TODO
 // when a user inputs the second number, the operation should be executed and return the result
-// let operate = document.querySelector('')
