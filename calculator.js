@@ -38,11 +38,11 @@ const operate = (firstNumber, operation, secondNumber) => {
   return 'Invalid operation';
 }
 
-function updateDisplay(value) {
+const updateDisplay = (value) => {
   if (displayValue === '' && value === '.') {
-      displayValue = '0.';
+    displayValue = '0.';
   } else {
-      displayValue += value;
+    displayValue += value;
   }
   display.textContent = displayValue;
 }
