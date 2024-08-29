@@ -5,6 +5,7 @@ let displayValue = '';
 
 const display = document.querySelector(".display");
 const numberButtons = document.querySelectorAll(".number");
+const operatorButtons = document.querySelectorAll(".operator")
 const clearButton = document.querySelector(".clear");
 const deleteButton = document.querySelector("#delete");
 
@@ -58,6 +59,16 @@ numberButtons.forEach(button => {
     });
 });
 
+operatorButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+      const value = e.target.textContent.trim();
+      if (displayValue === '0') {
+        displayValue = '';
+      }
+      updateDisplay(value);
+  })
+});
+
 clearButton.addEventListener("click", () => {
     firstNumber = '';
     operation = '';
@@ -76,5 +87,4 @@ deleteButton.addEventListener("click", () => {
 });
 
 //TODO
-// add event listener to the delete button: when a user clicks the backspace/delete button, it should remove the most recent value on the display and keep the other values that have been displayed
 // when a user inputs the second number, the operation should be executed and return the result
