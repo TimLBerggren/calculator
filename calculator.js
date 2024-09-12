@@ -10,13 +10,13 @@ const clearButton = document.querySelector(".clear");
 const deleteButton = document.querySelector("#delete");
 
 
-const operators = {
-    '^': 'power',
-    '+': 'plus',
-    '-': 'minus',
-    '*': 'multiply',
-    '/': 'divide'
-  };
+// const operators = {
+//     '^': 'power',
+//     '+': 'plus',
+//     '-': 'minus',
+//     '*': 'multiply',
+//     '/': 'divide'
+//   };
 
 const power = (a, b) => a ** b;
 const add = (a, b) => a + b;
