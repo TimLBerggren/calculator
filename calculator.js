@@ -107,9 +107,3 @@ deleteButton.addEventListener("click", () => {
     display.textContent = displayValue;
   }
 });
-
-//TODO
-// when a user inputs the equal sign,
-// it should not show the eqauls sign,
-// it should only execute the calculation and show the result, 
-// that result is stored as the number the next operator would consider as the first number.
