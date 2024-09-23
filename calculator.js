@@ -16,10 +16,12 @@ const subtract = (firstNumber, secondNumber) => Number(firstNumber) - Number(sec
 const multiply = (firstNumber, secondNumber) => Number(firstNumber) * Number(secondNumber);
 const divide = (firstNumber, secondNumber) => (Number(secondNumber) === 0) ? 'Cannot divide by 0' : Number(firstNumber) / Number(secondNumber);
 
+const roundResult = (result) => Math.round(result * 1000) / 1000
+
 const updateDisplay = (value) => {
-  displayValue += value;
+  displayValue += value.toString();
   display.textContent = displayValue;
-}
+};
 
 equalButton.addEventListener("click", () => {
   if (firstNumber !== '' && operation !== '' && secondNumber !== '') {
