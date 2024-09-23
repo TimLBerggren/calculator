@@ -79,7 +79,11 @@ operatorButtons.forEach(button => {
         calculate();
 
       operation = value;
-      updateDisplay(displayValue + `${operation}`);
+      if (operation === '=') {
+        updateDisplay(displayValue);
+      } else {
+        updateDisplay(displayValue + `${operation}`);
+      }
   });
 });
 
@@ -105,41 +109,7 @@ deleteButton.addEventListener("click", () => {
 });
 
 //TODO
-// when a user inputs the second number, the operation should be executed and return the result
-
-
-// Other stuff
-// const operators = {
-//     '^': 'power',
-//     '+': 'plus',
-//     '-': 'minus',
-//     '*': 'multiply',
-//     '/': 'divide'
-//   };
-
-
-// const operate = (firstNumber, operation, secondNumber) => {
-//   if (operation === 'power') {
-//     return power(firstNumber, secondNumber);
-//   } else if (operation === 'plus') {
-//     return add(firstNumber, secondNumber);
-//   } else if (operation === 'minus') {
-//     return subtract(firstNumber, secondNumber);
-//   } else if (operation === 'multiply') {
-//     return multiply(firstNumber, secondNumber);
-//   } else if (operation === 'divide') {
-//     return divide(firstNumber, secondNumber);
-//   }
-
-//   return 'Invalid operation';
-// }
-
-
-// const updateDisplay = (value) => {
-//   if (displayValue === '' && value === '.') {
-//     displayValue = '0.';
-//   } else {
-//     displayValue += value;
-//   }
-//   display.textContent = displayValue;
-// }
+// when a user inputs the equal sign,
+// it should not show the eqauls sign,
+// it should only execute the calculation and show the result, 
+// that result is stored as the number the next operator would consider as the first number.
