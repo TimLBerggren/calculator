@@ -16,18 +16,18 @@ const subtract = (firstNumber, secondNumber) => Number(firstNumber) - Number(sec
 const multiply = (firstNumber, secondNumber) => Number(firstNumber) * Number(secondNumber);
 const divide = (firstNumber, secondNumber) => (Number(secondNumber) === 0) ? 'Cannot divide by 0' : Number(firstNumber) / Number(secondNumber);
 
-const roundResult = (result) => Math.round(result * 1000) / 1000
+const roundResult = (result) => Math.round(result * 100) / 100;
 
 const updateDisplay = (value) => {
-  displayValue += value.toString();
+  displayValue = value.toString();
   display.textContent = displayValue;
 };
 
-equalButton.addEventListener("click", () => {
+const calculate = () => {
   if (firstNumber !== '' && operation !== '' && secondNumber !== '') {
     const a = parseFloat(firstNumber);
     const b = parseFloat(secondNumber);
-    let result = '';
+    let result;
 
     switch (operation) {
       case "+":
@@ -46,14 +46,17 @@ equalButton.addEventListener("click", () => {
         result = power(a, b);
         break;
     }
-  displayValue = result.toString();
-  display.textContent = displayValue;
 
-  firstNumber = result.toString();
-  secondNumber = '';
-  operation = '';
+    if (typeof result === "number") {
+      result = roundResult(result);
+    }
+
+    firstNumber = result.toString();
+    secondNumber = '';
+    operation = '';
+    updateDisplay(firstNumber);
   }
-});
+};
 
 numberButtons.forEach(button => {
   button.addEventListener("click", (e) => {
@@ -64,7 +67,7 @@ numberButtons.forEach(button => {
       } else {
         secondNumber += value;
       }
-      updateDisplay(value);
+      updateDisplay(displayValue + value);
   });
 });
 
@@ -72,14 +75,16 @@ operatorButtons.forEach(button => {
     button.addEventListener("click", (e) => {
       const value = e.target.textContent.trim();
 
-      if (operation !== '' && secondNumber === '')
-        return;
+      if (firstNumber !== '' && operation !== '' && secondNumber !== '')
+        calculate();
 
       operation = value;
-
-      updateDisplay(`${operation}`);
-      displayValue = (`${firstNumber}${secondNumber}`);
+      updateDisplay(displayValue + `${operation}`);
   });
+});
+
+equalButton.addEventListener("click", () => {
+  calculate();
 });
 
 clearButton.addEventListener("click", () => {
