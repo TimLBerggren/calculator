@@ -4,7 +4,7 @@ This project is a simple on-screen calculator built using JavaScript, HTML, and 
 
 ## What I Learned
 ### JavaScript
-- Functions: Created add(), subtract(), multiply(), and divide() functions.
+- Functions: Created add(), subtract(), multiply(), divide() and calculate() functions.
 - DOM Manipulation: Updated the calculator's display and captured button clicks dynamically.
 - Event Listeners: Made the calculator responsive to user interactions.
 - State Management: Stored user input, operators, and results, managing them throughout operations.
