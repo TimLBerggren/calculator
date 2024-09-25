@@ -8,6 +8,7 @@ body {
 
 .display {
     display: grid;
+    /* box-sizing: content-box; */
     font-size: 35px;
     justify-items: end;
     justify-content: end;
@@ -67,4 +68,11 @@ button {
 .clear,
 .delete {
   background-color: #F45B69;
+}
+
+.footer {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    justify-self: center;
 }
