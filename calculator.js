@@ -62,6 +62,13 @@ numberButtons.forEach(button => {
   button.addEventListener("click", (e) => {
       const value = e.target.textContent.trim();
 
+      if (value === '.') {
+        if (operation === '') {
+          if (firstNumber.includes('.')) return;
+        } else {
+          if (secondNumber.includes('.')) return;
+        }
+      }
       if (operation === '') {
           firstNumber += value;
       } else {
