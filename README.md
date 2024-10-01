@@ -1,5 +1,5 @@
 # JavaScript Calculator Project - README
-### Preview: https://timlberggren.github.io/calculator/
+#### Preview: https://timlberggren.github.io/calculator/
 
 ## Introduction
 This project is a simple on-screen calculator built using JavaScript, HTML, and CSS. It consolidates the core concepts I've learned, such as functions, DOM manipulation, and event handling, into a functional, interactive application.
