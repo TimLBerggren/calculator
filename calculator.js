@@ -14,7 +14,7 @@ const power = (firstNumber, secondNumber) => Number(firstNumber) ** Number(secon
 const add = (firstNumber, secondNumber) => Number(firstNumber) + Number(secondNumber);
 const subtract = (firstNumber, secondNumber) => Number(firstNumber) - Number(secondNumber);
 const multiply = (firstNumber, secondNumber) => Number(firstNumber) * Number(secondNumber);
-const divide = (firstNumber, secondNumber) => (Number(secondNumber) === 0) ? 'Cannot divide by 0' : Number(firstNumber) / Number(secondNumber);
+const divide = (firstNumber, secondNumber) => (Number(secondNumber) === 0) ? 'Infinity' : Number(firstNumber) / Number(secondNumber);
 
 const roundResult = (result) => Math.round(result * 100) / 100;
 
