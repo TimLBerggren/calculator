@@ -3,7 +3,6 @@ import { handleNumberClick, handleOperatorClick, calculate, clearCalculator, del
 const display = document.querySelector(".display");
 
 export const updateDisplay = (value) => {
-  console.log("Display Updated:", value); // Debugging output
   display.textContent = value;
 };
 

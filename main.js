@@ -58,7 +58,6 @@ export const handleNumberClick = (value) => {
   }
 
   displayValue += value;
-  console.log("Number Clicked:", displayValue); // Debugging output
   updateDisplay(displayValue);
 };
 
@@ -66,10 +65,15 @@ export const handleOperatorClick = (value) => {
   if (firstNumber !== '' && operation !== '' && secondNumber !== '') {
     calculate();
   }
-  operation = value;
-  displayValue += value;
-  console.log("Operator Clicked:", displayValue); // Debugging output
-  updateDisplay(displayValue);
+  if (value !== '=') {
+    operation = value;
+    updateDisplay(displayValue + `${operation}`);
+  } else {
+    updateDisplay(displayValue);
+  }
+  if (value !== '=') {
+    displayValue += value;
+  }
 };
 
 export const clearCalculator = () => {
