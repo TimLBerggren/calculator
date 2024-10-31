@@ -20,7 +20,6 @@ const performOperation = (a, b, operation) => {
   }
 };
 
-// Main calculation function
 export const calculate = () => {
   if (firstNumber !== '' && operation !== '' && secondNumber !== '') {
     const a = parseFloat(firstNumber);
@@ -36,7 +35,6 @@ export const calculate = () => {
   }
 };
 
-// Updates the global state and display
 const updateState = (result) => {
   firstNumber = result.toString();
   secondNumber = '';
