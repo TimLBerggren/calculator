@@ -9,40 +9,40 @@ let displayValue = '';
 
 export const getDisplayValue = () => displayValue;
 
+const performOperation = (a, b, operation) => {
+  switch (operation) {
+    case "+": return add(a, b);
+    case "-": return subtract(a, b);
+    case "x": return multiply(a, b);
+    case "÷": return divide(a, b);
+    case "^": return power(a, b);
+    default: return null;
+  }
+};
+
+// Main calculation function
 export const calculate = () => {
   if (firstNumber !== '' && operation !== '' && secondNumber !== '') {
     const a = parseFloat(firstNumber);
     const b = parseFloat(secondNumber);
-    let result;
 
-    switch (operation) {
-      case "+":
-        result = add(a, b);
-        break;
-      case "-":
-        result = subtract(a, b);
-        break;
-      case "x":
-        result = multiply(a, b);
-        break;
-      case "÷":
-        result = divide(a, b);
-        break;
-      case "^":
-        result = power(a, b);
-        break;
-    }
+    let result = performOperation(a, b, operation);
 
     if (typeof result === "number") {
       result = roundResult(result);
     }
 
-    firstNumber = result.toString();
-    secondNumber = '';
-    operation = '';
-    displayValue = firstNumber;
-    updateDisplay(displayValue);
+    updateState(result);
   }
+};
+
+// Updates the global state and display
+const updateState = (result) => {
+  firstNumber = result.toString();
+  secondNumber = '';
+  operation = '';
+  displayValue = firstNumber;
+  updateDisplay(displayValue);
 };
 
 export const handleNumberClick = (value) => {
