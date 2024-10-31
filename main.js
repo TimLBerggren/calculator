@@ -9,7 +9,7 @@ let displayValue = '';
 
 export const getDisplayValue = () => displayValue;
 
-const performOperation = (a, b, operation) => {
+export const performOperation = (a, b, operation) => {
   switch (operation) {
     case "+": return add(a, b);
     case "-": return subtract(a, b);
@@ -35,7 +35,7 @@ export const calculate = () => {
   }
 };
 
-const updateState = (result) => {
+export const updateState = (result) => {
   firstNumber = result.toString();
   secondNumber = '';
   operation = '';
