@@ -1,0 +1,4 @@
+Bugs:
+- clear button followed by a number causes "0 + number"
+- same with delete button
+- delete does not remove last input button number, so number (first/second) is still stored and used for operation
